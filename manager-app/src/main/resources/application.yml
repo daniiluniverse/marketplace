@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: manager-app
+  datasource:
+    url: jdbc:postgresql://localhost:5432/marketplace_db
+    username: postgres
+    password: 1199
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/market
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: manager-app
+            client-secret: 6NDGsTaDAz1UMUHwzZVvUamcfMThD1z3
+            scope:
+              - openid
+              - view_catalogue
+              - edit_catalogue
+              - microprofile-jwt
+
+server:
+  port: 8083
+
+
+catalogue:
+  service:
+    url: http://localhost:8081
+    username: product_service
+    password: 1199
+    registration: keycloak
+
+logging:
+  level:
+    org.springframework.security: DEBUG
