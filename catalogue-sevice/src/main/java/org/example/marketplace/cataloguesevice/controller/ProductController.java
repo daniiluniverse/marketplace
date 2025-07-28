@@ -7,7 +7,10 @@ import org.example.marketplace.cataloguesevice.dto.ProductUpdateRequest;
 import org.example.marketplace.cataloguesevice.dto.RequestProduct;
 import org.example.marketplace.cataloguesevice.entity.Product;
 import org.example.marketplace.cataloguesevice.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -15,76 +18,48 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/app/products")
 public class ProductController {
+    private final ProductService productService;
+    private static final Logger log = LoggerFactory.getLogger(ProductController.class);
 
-   private final ProductService productService;
-
-   @Autowired
+    @Autowired
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
 
-    @PostMapping("/new")
-    public ResponseEntity<?> createProduct(@Valid @RequestBody RequestProduct requestProduct) {
-
-        Product product = Product.builder()
-                .name(requestProduct.name())
-                .details(requestProduct.details())
-                .price(requestProduct.price())
-                .build();
-
-        productService.saveProduct(product);
-
-        return ResponseEntity.ok(Map.of(
-                "status", "ok",
-                "message", "продукт создан"
-        ));
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Product createProduct(@Valid @RequestBody RequestProduct request) {
+        log.info("Создание продукта: {}", request.name());
+        return productService.saveProduct(request);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateProduct(@PathVariable Long id, @Valid @RequestBody ProductUpdateRequest updateDTO){
-
-           Product product = productService.getProduct(id);
-
-           if (updateDTO.name() != null)
-               product.setName(updateDTO.name());
-           if (updateDTO.details() != null)
-               product.setDetails(updateDTO.details());
-           if (updateDTO.price() != null)
-               product.setPrice(updateDTO.price());
-
-           productService.updateProduct(product);
-
-           return ResponseEntity.ok().body(Map.of(
-                   "status", "ok",
-                   "message", "продукт обновлен"
-
-           ));
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateProduct(@PathVariable Long id, @Valid @RequestBody ProductUpdateRequest request) {
+        log.info("Обновление продукта ID {}", id);
+        productService.updateProduct(id, request);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getProduct(@PathVariable Long id){
+    public Product getProduct(@PathVariable Long id) {
+        return productService.getProduct(id);
+    }
 
-       Product product = productService.getProduct(id);
-
-       return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(product);
+    @GetMapping
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteProduct(@PathVariable Long id){
-
-       Product product = productService.getProduct(id);
-        productService.deleteProduct(product.getId());
-
-        return ResponseEntity.ok().body(Map.of(
-                "status", "ok",
-                "message", "продукт удален"
-
-        ));
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
     }
 }

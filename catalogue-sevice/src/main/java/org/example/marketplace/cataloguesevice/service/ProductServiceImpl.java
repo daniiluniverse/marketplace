@@ -2,6 +2,8 @@ package org.example.marketplace.cataloguesevice.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.Transient;
+import org.example.marketplace.cataloguesevice.dto.ProductUpdateRequest;
+import org.example.marketplace.cataloguesevice.dto.RequestProduct;
 import org.example.marketplace.cataloguesevice.entity.Product;
 import org.example.marketplace.cataloguesevice.repo.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,14 @@ public class ProductServiceImpl implements ProductService{
 
     @Transactional
     @Override
-    public Product saveProduct(Product product) {
+    public Product saveProduct(RequestProduct request) {
+
+        Product product = Product.builder()
+                .name(request.name())
+                .details(request.details())
+                .price(request.price())
+                .build();
+
         return productRepository.save(product);
     }
 
@@ -40,7 +49,16 @@ public class ProductServiceImpl implements ProductService{
 
     @Transactional
     @Override
-    public Product updateProduct(Product product) {
+    public Product updateProduct(Long id, ProductUpdateRequest request) {
+
+        Product product = productRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+
+        if (request.name() != null)
+            product.setName(request.name());
+        if (request.details() != null)
+            product.setDetails(request.details());
+        if (request.price() != null)
+            product.setPrice(request.price());
 
         return productRepository.save(product);
 
