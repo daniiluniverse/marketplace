@@ -33,11 +33,12 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @PostMapping
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public Product createProduct(@Valid @RequestBody RequestProduct request) {
         log.info("Создание продукта: {}", request.name());
         return productService.saveProduct(request);
+
     }
 
     @PutMapping("/{id}")

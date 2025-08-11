@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-name {
+            font-size: 1.2rem;
+            margin: 0 0 10px;
+            color: #2c3e50;
+        }
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+        .product-description {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        .product-id {
+            font-size: 0.8rem;
+            color: #95a5a6;
+        }
+        .loading {
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 50px;
+        }
+        .error {
+            color: #e74c3c;
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+<h1>Каталог товаров</h1>
+<div id="products" class="products-grid">
+    <div class="loading">Загрузка данных...</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

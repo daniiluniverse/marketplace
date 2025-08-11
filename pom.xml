@@ -23,6 +23,8 @@
     <modules>
         <module>catalogue-sevice</module>
         <module>manager-app</module>
+        <module>customer-app</module>
+        <module>feedback-servise</module>
     </modules>
 
     <properties>
@@ -33,20 +35,6 @@
         <lombok.version>1.18.30</lombok.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- Общие зависимости для всех модулей -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>provided</scope>
-                <optional>true</optional>
-            </dependency>
-
-            <!-- Другие общие зависимости -->
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <pluginManagement>

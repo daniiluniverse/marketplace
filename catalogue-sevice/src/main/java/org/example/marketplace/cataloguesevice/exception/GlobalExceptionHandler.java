@@ -23,14 +23,21 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<?> handleValidationException(MethodArgumentNotValidException ex){
 
-        FieldError error = ex.getBindingResult().getFieldErrors().getFirst();
+
+        BindingResult bindingResult = ex.getBindingResult();
+
+        Map<String, String> errors = bindingResult.getFieldErrors().stream()
+                .collect(Collectors.toMap(
+                        FieldError::getField,
+                        error -> error.getDefaultMessage() != null ? error.getDefaultMessage() : "Invalid field"
+                ));
 
         Map<String, Object> response = new LinkedHashMap<>();
 
         response.put("timestamp", LocalDateTime.now());
         response.put("status", HttpStatus.BAD_REQUEST.value());
         response.put("message", "Некорректные данные");
-        response.put("errors", error.getDefaultMessage());
+        response.put("errors", errors);
 
         return ResponseEntity.badRequest().body(response);
     }
