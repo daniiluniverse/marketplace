@@ -7,34 +7,51 @@ import org.example.marketplace.customerapp.client.impl.WebClientProductsClientIm
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.security.oauth2.client.registration.ReactiveClientRegistrationRepository;
+import org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction;
+import org.springframework.security.oauth2.client.web.server.ServerOAuth2AuthorizedClientRepository;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 public class ClientConfig {
 
     @Bean
+    @Scope("prototype")
+    public WebClient.Builder marketServicesWebClientBuilder(ReactiveClientRegistrationRepository clientRegistrationRepository,
+                                                            ServerOAuth2AuthorizedClientRepository authorizedClientRepository){
+        ServerOAuth2AuthorizedClientExchangeFilterFunction filter = new ServerOAuth2AuthorizedClientExchangeFilterFunction(clientRegistrationRepository, authorizedClientRepository);
+        filter.setDefaultClientRegistrationId("keycloak");
+        return WebClient.builder()
+                .filter(filter);
+    }
+
+    @Bean
     public WebClientProductsClientImpl webClientProductsClient(
-            @Value("${catalogue.service.url}") String baseUrl
+            @Value("${catalogue.service.url}") String baseUrl,
+            WebClient.Builder marketServicesWebClientBuilder
     ){
-        return new WebClientProductsClientImpl(WebClient.builder()
+        return new WebClientProductsClientImpl(marketServicesWebClientBuilder
                 .baseUrl(baseUrl)
                 .build());
     }
 
     @Bean
     public FavouriteProductsClientImpl favouriteProductsClient(
-            @Value("${feedback.service.url}") String baseUrl
+            @Value("${feedback.service.url}") String baseUrl,
+            WebClient.Builder marketServicesWebClientBuilder
     ){
-        return new FavouriteProductsClientImpl(WebClient.builder()
+        return new FavouriteProductsClientImpl(marketServicesWebClientBuilder
                 .baseUrl(baseUrl)
                 .build());
     }
 
     @Bean
     public ProductReviewsClientImpl productReviewsClient(
-            @Value("${feedback.service.url}") String baseUrl
+            @Value("${feedback.service.url}") String baseUrl,
+            WebClient.Builder marketServicesWebClientBuilder
     ){
-        return new ProductReviewsClientImpl(WebClient.builder()
+        return new ProductReviewsClientImpl(marketServicesWebClientBuilder
                 .baseUrl(baseUrl)
                 .build());
     }

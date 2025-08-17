@@ -22,7 +22,8 @@ public class WebClientProductsClientImpl implements ProductsClient {
 
     @Override
     public Mono<Product> findProduct(Long id) {
-        return this.webClient.get()
+        return this.webClient
+                .get()
                 .uri("/app/products/{id}", id)
                 .retrieve()
                 .bodyToMono(Product.class);

@@ -6,6 +6,7 @@ import org.example.marketplace.feedbackservise.dto.ProductReviewRequest;
 import org.example.marketplace.feedbackservise.dto.ProductReviewResponse;
 import org.example.marketplace.feedbackservise.service.ProductReviewService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
@@ -28,10 +29,11 @@ public class ProductReviewController {
 
     @PostMapping()
     public Mono<ResponseEntity<ProductReviewResponse>> createProductReview(
+            Mono<JwtAuthenticationToken> authenticationTokenMono,
             @Valid @RequestBody Mono<ProductReviewRequest> productReviewRequestMono, UriComponentsBuilder uriComponentsBuilder){
 
-        return productReviewRequestMono
-                .flatMap(review -> this.productReviewService.createProductReview(review.productId(), review.review(), review.rating()))
+        return authenticationTokenMono.flatMap(token -> productReviewRequestMono
+                .flatMap(review -> this.productReviewService.createProductReview(review.productId(), review.review(), review.rating(), token.getToken().getSubject())))
                 .map(productReviewResponse -> new ProductReviewResponse(productReviewResponse.getProductId(), productReviewResponse.getReview(), productReviewResponse.getRating()))
                 .map(response -> ResponseEntity.created(uriComponentsBuilder.replacePath("feedback-api/product-reviews/{productId}").build(response.productId())).body(response));
     }

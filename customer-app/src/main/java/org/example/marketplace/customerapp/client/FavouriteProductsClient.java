@@ -1,6 +1,7 @@
 package org.example.marketplace.customerapp.client;
 
 import org.apache.logging.log4j.util.Lazy;
+import org.example.marketplace.customerapp.dto.FavouriteProductResponse;
 import org.example.marketplace.customerapp.entity.FavouriteProduct;
 import org.example.marketplace.customerapp.entity.Product;
 import reactor.core.publisher.Flux;
@@ -14,7 +15,7 @@ public interface FavouriteProductsClient {
 
     Mono<FavouriteProduct> findFavouriteProductByProductId(Long productId);
 
-    Flux<FavouriteProduct> findFavouriteProduct();
+    Flux<FavouriteProductResponse> findFavouriteProduct();
 
 
 

@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.marketplace.customerapp.client.FavouriteProductsClient;
 import org.example.marketplace.customerapp.client.exception.ClientBadRequestException;
 import org.example.marketplace.customerapp.client.payload.NewFavouriteProductPayload;
+import org.example.marketplace.customerapp.dto.FavouriteProductResponse;
 import org.example.marketplace.customerapp.entity.FavouriteProduct;
 import org.example.marketplace.customerapp.entity.Product;
 import org.example.marketplace.customerapp.entity.ProductReview;
@@ -33,13 +34,13 @@ public class FavouriteProductsClientImpl implements FavouriteProductsClient {
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(new NewFavouriteProductPayload(product.id(), product.name(), product.details(),  product.price()))
                 .retrieve()
-//                .onStatus(HttpStatus.BAD_REQUEST::equals, response ->
-//                        response.bodyToMono(Map.class)
-//                                .flatMap(body -> Mono.error(new ClientBadRequestException(
-//                                        body.getOrDefault("message", "Validation failed").toString(),
-//                                        (Map<String, String>) body.getOrDefault("errors", Map.of())
-//                                )))
-//                )
+                .onStatus(HttpStatus.BAD_REQUEST::equals, response ->
+                        response.bodyToMono(Map.class)
+                                .flatMap(body -> Mono.error(new ClientBadRequestException(
+                                        body.getOrDefault("message", "Validation failed").toString(),
+                                        (Map<String, String>) body.getOrDefault("errors", Map.of())
+                                )))
+                )
                 .bodyToMono(FavouriteProduct.class);
     }
 
@@ -64,11 +65,13 @@ public class FavouriteProductsClientImpl implements FavouriteProductsClient {
     }
 
     @Override
-    public Flux<FavouriteProduct> findFavouriteProduct() {
+    public Flux<FavouriteProductResponse> findFavouriteProduct() {
         return this.webClient
                 .get()
                 .uri("/feedback-api/favourite-products")
                 .retrieve()
-                .bodyToFlux(FavouriteProduct.class);
+                .bodyToFlux(FavouriteProductResponse.class)
+                .doOnNext(fp -> log.info("Received from client: {}", fp));
+
     }
 }

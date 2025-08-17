@@ -12,9 +12,12 @@ import org.example.marketplace.customerapp.dto.ProductReviewResponse;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.security.web.reactive.result.view.CsrfRequestDataValueProcessor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -83,6 +86,7 @@ public class ProductController {
 
     @DeleteMapping("/favourite-product/delete/")
     public Mono<ResponseEntity<Void>> deleteProductFromFavorites (@PathVariable Long productId){
+        log.info("Запрос на удаление продукта" + productId);
         return this.favouriteProductsClient.removeProductFromFavorites(productId)
                 .thenReturn(ResponseEntity.noContent().build());
 

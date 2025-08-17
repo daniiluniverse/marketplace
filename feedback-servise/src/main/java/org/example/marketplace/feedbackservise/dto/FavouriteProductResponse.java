@@ -9,6 +9,6 @@ public class FavouriteProductResponse {
 
     private long productId;
     private String name;
-    private String description;
+    private String details;
     private double price;
 }

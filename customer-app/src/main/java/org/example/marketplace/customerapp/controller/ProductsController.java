@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.util.Logger;
 
 import java.util.List;
 
@@ -23,27 +24,20 @@ public class ProductsController {
     private final FavouriteProductsClient favouriteProductsClient;
 
     @GetMapping("/list")
-    public Mono<List<ProductResponse>> getProductsList() {
+    public Flux<ProductResponse> getProductsList() {
         return productsClient.findAllProducts()
                 .map(product -> new ProductResponse(
                         product.id(),
                         product.name(),
                         product.details(),
                         product.price()
-                ))
-                .collectList();
+                ));
     }
 
     @GetMapping("/favourite")
     public Flux<FavouriteProductResponse> getFavouriteProduct(){
 
-        return this.favouriteProductsClient.findFavouriteProduct()
-                .map(product -> new FavouriteProductResponse(
-                        product.getProduct().id(),
-                        product.getProduct().name(),
-                        product.getProduct().details(),
-                        product.getProduct().price()
-                ));
+        return this.favouriteProductsClient.findFavouriteProduct();
 
 
 

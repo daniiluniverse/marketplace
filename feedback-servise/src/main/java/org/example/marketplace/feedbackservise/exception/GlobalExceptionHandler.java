@@ -57,4 +57,16 @@ public class GlobalExceptionHandler {
                 ResponseEntity.status(HttpStatus.NOT_FOUND).body(body)
         );
     }
+
+    @ExceptionHandler(WebClientResponseException.Forbidden.class)
+    public Mono<ResponseEntity<Map<String, Object>>> handleAllExceptions(WebClientResponseException.Forbidden ex) {
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("status", HttpStatus.FORBIDDEN.value());
+        body.put("message", "User not authentication");
+        body.put("error", ex.getMessage());
+
+        return Mono.just(
+                ResponseEntity.status(HttpStatus.FORBIDDEN).body(body)
+        );
+    }
 }

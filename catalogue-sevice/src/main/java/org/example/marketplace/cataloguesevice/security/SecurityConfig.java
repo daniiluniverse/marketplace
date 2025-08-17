@@ -16,8 +16,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
        return http
-               .authorizeHttpRequests(auth -> auth.requestMatchers( HttpMethod.POST,
-                       "/app/products/new")
+               .authorizeHttpRequests(auth -> auth
+                       .requestMatchers(HttpMethod.POST, "/app/products/new")
                        .hasAuthority("SCOPE_edit_catalogue")
                        .requestMatchers(HttpMethod.PUT, "/app/products/{id:\\d+}")
                        .hasAuthority("SCOPE_edit_catalogue")
