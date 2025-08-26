@@ -20,6 +20,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 @SpringBootTest
 @AutoConfigureMockMvc
+@AutoConfigureRestDocs
+@ExtendWith(RestDocumentationExtension.class)
 public class ProductControllerIT {
 
     @Autowired
