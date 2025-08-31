@@ -2,20 +2,27 @@ package org.example.marketplace.cataloguesevice.controller;
 
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessResponse;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.jwt;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @Transactional
 @SpringBootTest
@@ -109,5 +116,77 @@ public class ProductControllerIT {
 
                         );
         
+    }
+
+
+    @Test
+    @Sql("/sql/products.sql")
+    void updateProduct_RequestIsValid_ReturnsNoContent() throws Exception {
+
+        //given
+        var requestBuilders = MockMvcRequestBuilders.put("/app/products/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("""
+                            {
+                             "name": "Кефир",
+                             "details": "Бодрый кефир",
+                             "price": 200}
+                        """)
+                .with(jwt().jwt(builder -> builder.claim("scope", "edit_catalogue")));
+
+
+        this.mockMvc.perform(requestBuilders)
+                .andDo(print())
+                .andExpectAll(
+                        status().isNoContent()
+                );
+
+    }
+
+    @Test
+    @Sql("/sql/products.sql")
+    void getProduct_ReturnsProduct() throws Exception {
+
+        var requestBuilders = MockMvcRequestBuilders.get("/app/products/1")
+                .with(jwt().jwt(builder -> builder.claim("scope", "edit_catalogue")));
+
+        this.mockMvc.perform(requestBuilders)
+                .andDo(print())
+                .andExpectAll(
+                        status().isOk(),
+                        content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON),
+                        content().json(
+                                """
+                                         {
+                                         id: 1,
+                                         name: "Товар 1",
+                                         details: "Описание товара 1",
+                                         price: 1000
+                                         }
+                                        """
+                        )
+                )
+                .andDo(document("catalogue/products/find_all",
+                        preprocessResponse(prettyPrint()),
+                        responseFields(
+                                fieldWithPath("id").description("Идентификатор товара").type("long"),
+                                fieldWithPath("name").description("Название товара").type("string"),
+                                fieldWithPath("details").description("Описание товара").type("string"),
+                                fieldWithPath("price").description("Цена товара").type("double")
+                        )));
+    }
+
+    @Test
+    @Sql("/sql/products.sql")
+    void deleteProduct_ReturnsNoContent() throws Exception {
+
+        var requestBuilder = MockMvcRequestBuilders.delete("/app/products/1")
+                .with(jwt().jwt(builder -> builder.claim("scope", "edit_catalogue")));
+
+        this.mockMvc.perform(requestBuilder)
+                .andDo(print())
+                .andExpectAll(
+                        status().isNoContent()
+                );
     }
 }

@@ -13,5 +13,7 @@ public record ProductReviewRequest(
         @NotNull(message = "Заполните оценку")
         @Min(value = 1, message = "Минимальная оценка 1")
         @Max(value = 5, message = "Максимальная оценка 5")
-        Integer rating) {
+        Integer rating
+
+) {
 }

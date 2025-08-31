@@ -1,6 +1,12 @@
 package org.example.marketplace.cataloguesevice.controller;
 
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.headers.Header;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.example.marketplace.cataloguesevice.dto.ProductUpdateRequest;
@@ -24,6 +30,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/app/products")
+
 public class ProductController {
     private final ProductService productService;
     private static final Logger log = LoggerFactory.getLogger(ProductController.class);
@@ -35,6 +42,18 @@ public class ProductController {
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
+//    @Operation(responses = {
+//            @ApiResponse(
+//                    responseCode = "201",
+//                    headers = @Header(name = "Content-Type", description = "Тип данных"),
+//                    content = @Content(
+//                            schema = @Schema(
+//
+//                            )
+//                    )
+//            )
+//    })
     public Product createProduct(@Valid @RequestBody RequestProduct request) {
         log.info("Создание продукта: {}", request.name());
         return productService.saveProduct(request);
@@ -43,23 +62,27 @@ public class ProductController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
     public void updateProduct(@PathVariable Long id, @Valid @RequestBody ProductUpdateRequest request) {
         log.info("Обновление продукта ID {}", id);
         productService.updateProduct(id, request);
     }
 
     @GetMapping("/{id}")
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
     public Product getProduct(@PathVariable Long id) {
         return productService.getProduct(id);
     }
 
     @GetMapping
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
     public void deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
     }
