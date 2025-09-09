@@ -1,6 +1,14 @@
 spring:
   application:
     name: manager-app
+  boot:
+    admin:
+      client:
+        enabled: true
+        instance:
+          name: market-manager-app
+          service-host-type: ip
+        url: http://localhost:8086
   datasource:
     url: jdbc:postgresql://localhost:5432/marketplace_db
     username: postgres
@@ -21,6 +29,16 @@ spring:
               - view_catalogue
               - edit_catalogue
               - microprofile-jwt
+          metrics:
+            provider: keycloak
+            client-id: manager-app
+            client-secret: 6NDGsTaDAz1UMUHwzZVvUamcfMThD1z3
+            authorization-grant-type: client_credentials
+            scope:
+              - metrics_server
+      resourceserver:
+          jwt:
+            issuer-uri: http://localhost:8082/realms/market
 
 server:
   port: 8083
@@ -36,3 +54,14 @@ catalogue:
 logging:
   level:
     org.springframework.security: DEBUG
+
+management:
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'

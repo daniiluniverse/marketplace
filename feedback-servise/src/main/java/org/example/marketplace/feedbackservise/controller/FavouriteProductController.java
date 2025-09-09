@@ -1,6 +1,8 @@
 package org.example.marketplace.feedbackservise.controller;
 
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +11,8 @@ import org.example.marketplace.feedbackservise.dto.FavouriteProductResponse;
 import org.example.marketplace.feedbackservise.entity.Product;
 import org.example.marketplace.feedbackservise.service.FavouriteProductService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Flux;
@@ -24,50 +27,53 @@ public class FavouriteProductController {
     private final FavouriteProductService favouriteProductService;
 
     @GetMapping
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
     public Flux<FavouriteProductResponse> findFavouriteProducts(
-            Mono<JwtAuthenticationToken> authenticationTokenMono
+            @AuthenticationPrincipal Jwt jwt
     ){
         log.info("Запрос избранных товаров");
         return
-               authenticationTokenMono.flatMapMany(token ->  this.favouriteProductService.findFavouriteProduct(token.getToken().getSubject())
+              this.favouriteProductService.findFavouriteProduct(jwt.getSubject())
                 .map(favouriteProduct ->
                         new FavouriteProductResponse(
                                 favouriteProduct.getProduct().id(),
                                 favouriteProduct.getProduct().name(),
                                 favouriteProduct.getProduct().details(),
                                 favouriteProduct.getProduct().price()))
-                .doOnNext(fp -> log.info("Received from client: {}", fp)));
+                .doOnNext(fp -> log.info("Received from client: {}", fp));
     }
 
     @GetMapping("by-product-id/{productId}")
-    public Mono<FavouriteProductResponse> findFavouriteProductByProductId(
-            Mono<JwtAuthenticationToken> authenticationTokenMono,
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
+    public Flux<FavouriteProductResponse> findFavouriteProductByProductId(
+            @AuthenticationPrincipal Jwt jwt,
             @PathVariable Long productId){
         log.info("Запрос на избранный товар с id: {}", productId);
-        return authenticationTokenMono.flatMap(token -> this.favouriteProductService.findFavouriteProductByProductsId(productId, token.getToken().getSubject())
+       return this.favouriteProductService.findFavouriteProduct(jwt.getSubject())
                 .map(favouriteProduct ->
                         new FavouriteProductResponse(
                                 favouriteProduct.getProduct().id(),
                                 favouriteProduct.getProduct().name(),
                                 favouriteProduct.getProduct().details(),
                                 favouriteProduct.getProduct().price()
-                        )));
+                        ));
     }
 
     @PostMapping
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
     public Mono<ResponseEntity<FavouriteProductResponse>> addProductsToFavourite(
-            Mono<JwtAuthenticationToken> authenticationTokenMono,
+            @AuthenticationPrincipal Jwt jwt,
             @Valid @RequestBody Mono<FavouriteProductRequest> favouriteProductRequest,
             UriComponentsBuilder uriComponentsBuilder
             ){
-        return authenticationTokenMono.flatMap(token ->
+        return
                 favouriteProductRequest
                 .flatMap(request -> this.favouriteProductService.addProductToFavorite(new Product(
                         request.getProductId(),
                         request.getName(),
                         request.getDetails(),
                         request.getPrice()
-                ), token.getToken().getSubject())))
+                ), jwt.getSubject()))
 
                 .map(product -> new FavouriteProductResponse(
                         product.getProduct().id(),
@@ -79,16 +85,17 @@ public class FavouriteProductController {
     }
 
     @DeleteMapping("by-product-id/{productId}")
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
     public Mono<ResponseEntity<Void>> removeProductFromFavourites(
-            Mono<JwtAuthenticationToken> authenticationTokenMono,
+            @AuthenticationPrincipal Jwt jwt,
             @PathVariable Long productId){
 
         log.info("Запрос на удаление избранного товара с id: {}", productId);
 
 
-        return authenticationTokenMono.flatMap(token ->
-                this.favouriteProductService.removeProductFromFavorites(productId, token.getToken().getSubject())
-                .then(Mono.just(ResponseEntity.noContent().build())));
+        return
+                this.favouriteProductService.removeProductFromFavorites(productId, jwt.getSubject())
+                .then(Mono.just(ResponseEntity.noContent().build()));
     }
 
 

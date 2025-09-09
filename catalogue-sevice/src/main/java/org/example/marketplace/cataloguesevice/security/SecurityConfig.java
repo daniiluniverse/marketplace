@@ -17,20 +17,18 @@ public class SecurityConfig {
 
        return http
                .authorizeHttpRequests(auth -> auth
-                       .requestMatchers(HttpMethod.POST, "/app/products/new")
-                       .hasAuthority("SCOPE_edit_catalogue")
-                       .requestMatchers(HttpMethod.PUT, "/app/products/{id:\\d+}")
-                       .hasAuthority("SCOPE_edit_catalogue")
-                       .requestMatchers(HttpMethod.DELETE, "/app/products/{id:\\d+}")
-                       .hasAuthority("SCOPE_edit_catalogue")
-                       .requestMatchers(HttpMethod.GET)
-                       .permitAll()
-                     //  .hasAuthority("SCOPE_view_catalogue")
+                       .requestMatchers("/v3/api-docs/**", "swagger-ui.html", "/swagger-ui/**").permitAll()
+                       .requestMatchers(HttpMethod.POST, "/app/products/new").hasAuthority("SCOPE_edit_catalogue")
+                       .requestMatchers(HttpMethod.PUT, "/app/products/{id:\\d+}").hasAuthority("SCOPE_edit_catalogue")
+                       .requestMatchers(HttpMethod.DELETE, "/app/products/{id:\\d+}").hasAuthority("SCOPE_edit_catalogue")
+                       .requestMatchers("/actuator/**").hasAuthority("SCOPE_metrics")
+                       .requestMatchers(HttpMethod.GET).hasAuthority("SCOPE_view_catalogue")
                        .anyRequest()
                        .denyAll())
                .csrf(CsrfConfigurer::disable)
                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.jwt(Customizer.withDefaults()))
+               .oauth2Client(Customizer.withDefaults())
                 .build();
     }
 }

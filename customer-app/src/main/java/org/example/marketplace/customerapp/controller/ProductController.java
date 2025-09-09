@@ -81,6 +81,8 @@ public class ProductController {
                                                 product.price()
                                         )
                                 ))
+                ) .onErrorResume(WebClientResponseException.NotFound.class, e ->
+                        Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"))
                 );
     }
 

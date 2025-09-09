@@ -1,6 +1,9 @@
 package org.example.marketplace.customerapp.config;
 
 
+import de.codecentric.boot.admin.client.config.ClientProperties;
+import de.codecentric.boot.admin.client.registration.ReactiveRegistrationClient;
+import de.codecentric.boot.admin.client.registration.RegistrationClient;
 import org.example.marketplace.customerapp.client.impl.FavouriteProductsClientImpl;
 import org.example.marketplace.customerapp.client.impl.ProductReviewsClientImpl;
 import org.example.marketplace.customerapp.client.impl.WebClientProductsClientImpl;
@@ -8,6 +11,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.security.oauth2.client.AuthorizedClientServiceReactiveOAuth2AuthorizedClientManager;
+import org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientService;
 import org.springframework.security.oauth2.client.registration.ReactiveClientRegistrationRepository;
 import org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction;
 import org.springframework.security.oauth2.client.web.server.ServerOAuth2AuthorizedClientRepository;
@@ -55,4 +60,23 @@ public class ClientConfig {
                 .baseUrl(baseUrl)
                 .build());
     }
+
+    @Bean
+    public RegistrationClient registrationClient(ReactiveClientRegistrationRepository clientRegistrationRepository,
+                                                 ReactiveOAuth2AuthorizedClientService authorizedClientService,
+                                                 ClientProperties clientProperties) {
+
+        ServerOAuth2AuthorizedClientExchangeFilterFunction filter =
+                new ServerOAuth2AuthorizedClientExchangeFilterFunction(
+                        new AuthorizedClientServiceReactiveOAuth2AuthorizedClientManager(clientRegistrationRepository, authorizedClientService)
+                );
+
+        filter.setDefaultClientRegistrationId("metrics");
+
+        return new ReactiveRegistrationClient(WebClient.builder()
+                .filter(filter)
+                .build(), clientProperties.getReadTimeout());
+    }
+
+
 }

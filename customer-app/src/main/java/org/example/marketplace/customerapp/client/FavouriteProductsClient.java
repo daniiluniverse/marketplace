@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 public interface FavouriteProductsClient {
 
-    Mono<FavouriteProduct> addProductToFavorites(Product product);
+    Mono<FavouriteProductResponse> addProductToFavorites(Product product);
 
     Mono<Void>  removeProductFromFavorites(Long productId);
 

@@ -26,7 +26,7 @@ public class FavouriteProductsClientImpl implements FavouriteProductsClient {
 
 
     @Override
-    public Mono<FavouriteProduct> addProductToFavorites(Product product) {
+    public Mono<FavouriteProductResponse> addProductToFavorites(Product product) {
         log.info("Отправка{}", product);
         return this.webClient
                 .post()
@@ -41,7 +41,7 @@ public class FavouriteProductsClientImpl implements FavouriteProductsClient {
                                         (Map<String, String>) body.getOrDefault("errors", Map.of())
                                 )))
                 )
-                .bodyToMono(FavouriteProduct.class);
+                .bodyToMono(FavouriteProductResponse.class);
     }
 
     @Override
