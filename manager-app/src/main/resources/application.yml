@@ -4,11 +4,8 @@ spring:
   boot:
     admin:
       client:
-        enabled: true
-        instance:
-          name: market-manager-app
-          service-host-type: ip
-        url: http://localhost:8086
+        enabled: false
+
   datasource:
     url: jdbc:postgresql://localhost:5432/marketplace_db
     username: postgres
@@ -65,3 +62,12 @@ management:
     web:
       exposure:
         include: '*'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost  # или ваш корректный hostname
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true

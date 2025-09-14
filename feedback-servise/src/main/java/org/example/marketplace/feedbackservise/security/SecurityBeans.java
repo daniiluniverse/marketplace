@@ -24,7 +24,9 @@ public class SecurityBeans {
                                 "/favicon.ico",
                                 "/oauth2-redirect.html"
                         ).permitAll()
-                        .pathMatchers("/actuator/**").hasAuthority("SCOPE_metrics")
+                        .pathMatchers("/actuator/**")
+                        .permitAll()
+                //        .hasAuthority("SCOPE_metrics")
                         .anyExchange().authenticated())
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())

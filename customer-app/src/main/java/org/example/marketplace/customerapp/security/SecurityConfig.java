@@ -4,6 +4,7 @@ import jakarta.annotation.Priority;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.context.NoOpServerSecurityContextRepository;
@@ -20,7 +21,8 @@ public class SecurityConfig {
         return http
                 .securityMatcher(pathMatchers("/actuator/**"))
                 .authorizeExchange(customizer -> customizer.pathMatchers("/actuator/**")
-                        .hasAuthority("SCOPE_metrics"))
+                        .permitAll())
+                        //        .hasAuthority("SCOPE_metrics"))
                 .oauth2ResourceServer(customizer -> customizer.jwt(Customizer.withDefaults()))
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())
@@ -36,6 +38,7 @@ public class SecurityConfig {
                 .authorizeExchange(castomizer -> castomizer.anyExchange().authenticated())
                 .oauth2Login(Customizer.withDefaults())
                 .oauth2Client(Customizer.withDefaults())
+                .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .build();
     }
 }

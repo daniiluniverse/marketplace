@@ -8,6 +8,8 @@ import org.example.marketplace.customerapp.client.impl.FavouriteProductsClientIm
 import org.example.marketplace.customerapp.client.impl.ProductReviewsClientImpl;
 import org.example.marketplace.customerapp.client.impl.WebClientProductsClientImpl;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -23,6 +25,7 @@ public class ClientConfig {
 
     @Bean
     @Scope("prototype")
+    @LoadBalanced
     public WebClient.Builder marketServicesWebClientBuilder(ReactiveClientRegistrationRepository clientRegistrationRepository,
                                                             ServerOAuth2AuthorizedClientRepository authorizedClientRepository){
         ServerOAuth2AuthorizedClientExchangeFilterFunction filter = new ServerOAuth2AuthorizedClientExchangeFilterFunction(clientRegistrationRepository, authorizedClientRepository);
@@ -62,6 +65,7 @@ public class ClientConfig {
     }
 
     @Bean
+    @ConditionalOnProperty(name = "eureka.client.enabled", havingValue = "false")
     public RegistrationClient registrationClient(ReactiveClientRegistrationRepository clientRegistrationRepository,
                                                  ReactiveOAuth2AuthorizedClientService authorizedClientService,
                                                  ClientProperties clientProperties) {

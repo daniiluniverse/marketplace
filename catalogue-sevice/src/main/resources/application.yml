@@ -2,11 +2,8 @@ spring:
   boot:
     admin:
       client:
-        enabled: true
-        instance:
-          name: catalogue-service
-          service-host-type: ip
-        url: http://localhost:8086
+        enabled: false
+
   application:
     name: catalogue-sevice
 
@@ -58,3 +55,12 @@ management:
     web:
       exposure:
         include: '*'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost  # или ваш корректный hostname
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true

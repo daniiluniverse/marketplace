@@ -32,7 +32,9 @@ public class SecurityConfig {
         return http
                 .securityMatcher("/actuator/**")
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                        .requestMatchers("/actuator/**").hasAuthority("SCOPE_metrics")
+                        .requestMatchers("/actuator/**")
+                        .permitAll()
+                     //  .hasAuthority("SCOPE_metrics")
                         .anyRequest().denyAll())
                 .oauth2ResourceServer(customizer -> customizer.jwt(Customizer.withDefaults()))
                 .sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -49,6 +51,7 @@ public class SecurityConfig {
                         .hasRole("MANAGER"))
                 .oauth2Login(Customizer.withDefaults())
                 .oauth2Client(Customizer.withDefaults())
+                .csrf(AbstractHttpConfigurer::disable)
                 .build();
     }
 
