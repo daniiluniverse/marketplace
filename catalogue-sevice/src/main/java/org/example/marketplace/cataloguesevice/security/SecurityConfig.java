@@ -18,13 +18,18 @@ public class SecurityConfig {
        return http
                .authorizeHttpRequests(auth -> auth
                        .requestMatchers("/v3/api-docs/**", "swagger-ui.html", "/swagger-ui/**").permitAll()
-                       .requestMatchers(HttpMethod.POST, "/app/products/new").hasAuthority("SCOPE_edit_catalogue")
+                       .requestMatchers(HttpMethod.POST, "/app/products/new")
+                       .permitAll()
+             //          .hasAuthority("SCOPE_edit_catalogue")
                        .requestMatchers(HttpMethod.PUT, "/app/products/{id:\\d+}").hasAuthority("SCOPE_edit_catalogue")
                        .requestMatchers(HttpMethod.DELETE, "/app/products/{id:\\d+}").hasAuthority("SCOPE_edit_catalogue")
                        .requestMatchers("/actuator/**")
                        .permitAll()
                        //.hasAuthority("SCOPE_metrics")
-                       .requestMatchers(HttpMethod.GET).hasAuthority("SCOPE_view_catalogue")
+                       .requestMatchers(HttpMethod.GET)
+                       .permitAll()
+
+                       //.hasAuthority("SCOPE_view_catalogue")
                        .anyRequest()
                        .denyAll())
                .csrf(CsrfConfigurer::disable)

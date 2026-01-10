@@ -43,17 +43,6 @@ public class ProductController {
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(security = @SecurityRequirement(name = "keycloak"))
-//    @Operation(responses = {
-//            @ApiResponse(
-//                    responseCode = "201",
-//                    headers = @Header(name = "Content-Type", description = "Тип данных"),
-//                    content = @Content(
-//                            schema = @Schema(
-//
-//                            )
-//                    )
-//            )
-//    })
     public Product createProduct(@Valid @RequestBody RequestProduct request) {
         log.info("Создание продукта: {}", request.name());
         return productService.saveProduct(request);

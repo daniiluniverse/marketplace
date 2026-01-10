@@ -1,0 +1,7 @@
+# 1. Соберите образ
+docker build --build-arg JAR_FILE=catalogue-sevice/target/catalogue-service-1.0-SNAPSHOT-exec.jar .
+
+# 2. Запустите контейнер с именем
+docker run -d --name catalogue-service `
+  -p 8081:8081 `
+  catalogue-sevice

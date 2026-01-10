@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
@@ -33,10 +36,12 @@ public class RestClientBeans {
     public RestClient catalogueServiceRestClient(
             ClientRegistrationRepository clientRegistrationRepository,
             OAuth2AuthorizedClientRepository auth2AuthorizedClientRepository,
-            @Value("${catalogue.service.registration}") String registration) {
+            @Value("${catalogue.service.registration}") String registration,
+            LoadBalancerClient loadBalancerClient) {
 
         return RestClient.builder()
                 .baseUrl(baseUrl)
+                .requestInterceptor(new LoadBalancerInterceptor(loadBalancerClient))
                 .requestInterceptor(
                         new OauthClientHttpRequestInterceptor(
                                 new DefaultOAuth2AuthorizedClientManager(

@@ -1,0 +1,122 @@
+name: marketplace
+
+services:
+  postgres:
+    image: postgres:16
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: marketplace_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  feedback-db:
+    image: mongo:7
+    ports:
+      - '27017:27017'
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:23.0.7
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    volumes:
+      - './config/keycloak/import:/opt/keycloak/data/import'
+    ports:
+      - '8082:8080'
+    command: start-dev --import-realm
+
+
+
+  catalogue-service:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: catalogue-sevice/target/catalogue-service-1.0-SNAPSHOT-exec.jar
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/marketplace_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      JAVA_OPTS: -Xmx512m -Xms256m
+    ports:
+      - '8081:8081'
+    depends_on:
+      - postgres
+
+  manager-app:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: manager-app/target/manager-app-1.0-SNAPSHOT-exec.jar
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/marketplace_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      JAVA_OPTS: -Xmx512m -Xms256m
+    ports:
+      - '8083:8083'
+    depends_on:
+      - postgres
+
+  feedback-service:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: feedback-servise/target/feedback-servise-1.0-SNAPSHOT-exec.jar
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://feedback-db:27017/feedback
+      JAVA_OPTS: -Xmx512m -Xms256m
+    ports:
+      - '8084:8084'
+    depends_on:
+      - feedback-db
+
+  customer-app:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: customer-app/target/customer-app-1.0-SNAPSHOT-exec.jar
+    environment:
+      JAVA_OPTS: -Xmx512m -Xms256m
+    ports:
+      - '8085:8085'
+
+  admin-server:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: admin-server/target/admin-server-1.0-SNAPSHOT-exec.jar
+    environment:
+      JAVA_OPTS: -Xmx512m -Xms256m
+    ports:
+      - '8086:8086'
+
+  eureka-server:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: eureka-server/target/eureka-server-1.0-SNAPSHOT-exec.jar
+    environment:
+      JAVA_OPTS: -Xmx512m -Xms256m
+    ports:
+      - '8761:8761'
+
+
+
+volumes:
+  postgres_data:
+  satmag-keycloak-data:

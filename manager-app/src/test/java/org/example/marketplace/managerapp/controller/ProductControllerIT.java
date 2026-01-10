@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.example.marketplace.managerapp.client.ProductRestClient;
@@ -25,6 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@ActiveProfiles("test")  // ← ВКЛЮЧАЕМ ТЕСТОВЫЙ ПРОФИЛЬ
 @WireMockTest(httpPort = 54321)
 public class ProductControllerIT {
 
@@ -34,7 +36,6 @@ public class ProductControllerIT {
     @MockitoBean
     private ProductRestClient productRestClient;
 
-//     
 
     @Test
     @WithMockUser(username = "daniilkoz", roles = "MANAGER")

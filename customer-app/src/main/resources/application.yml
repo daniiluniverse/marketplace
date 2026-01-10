@@ -1,0 +1,74 @@
+
+spring:
+  boot:
+    admin:
+      client:
+        enabled: false
+  application:
+    name: customer-app
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://192.168.1.5:8082/realms/market
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: customer-app
+            client-secret: NOI4Eldt4HoeuIIV4LOZ52lPYVnozYSX
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - view_catalogue
+          metrics:
+            provider: keycloak
+            client-id: customer-app
+            client-secret: NOI4Eldt4HoeuIIV4LOZ52lPYVnozYSX
+            authorization-grant-type: client_credentials
+            scope:
+              - metrics_server
+      resourceserver:
+        jwt:
+          issuer-uri: http://192.168.1.5:8082/realms/market
+
+  mvc:
+    static-path-pattern: /**
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+
+catalogue:
+  service:
+    url: lb://catalogue-sevice
+server:
+  port: 8085
+
+feedback:
+  service:
+    url: lb://feedback-servise
+
+management:
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+          - health
+          - prometheus
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.5:8761/eureka/
+  instance:
+    hostname: 192.168.1.5  # или ваш корректный hostname
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+
+

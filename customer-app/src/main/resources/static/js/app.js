@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8085/customer/products';
+const API_BASE_URL = 'http://192.168.1.5:8085/customer/products';
 
 // DOM элементы
 const productListEl = document.getElementById('productList');

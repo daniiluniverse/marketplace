@@ -1,0 +1,36 @@
+scrape_configs:
+  - job_name: market_admin_service
+    scrape_timeout: 60s
+    static_configs:
+      - targets: ['host.docker.internal:8086'] # Убедитесь, что из контейнера VM этот хост доступен
+        labels:
+          application: market-admin-service
+    metrics_path: /actuator/prometheus
+  - job_name: catalogue_service
+    scrape_timeout: 60s
+    static_configs:
+      - targets: [ 'host.docker.internal:8081' ] # Убедитесь, что из контейнера VM этот хост доступен
+        labels:
+          application: market-admin-service
+    metrics_path: /actuator/prometheus
+  - job_name: market-manager-app
+    scrape_timeout: 60s
+    static_configs:
+      - targets: [ 'host.docker.internal:8083' ] # Убедитесь, что из контейнера VM этот хост доступен
+        labels:
+          application: market-admin-service
+    metrics_path: /actuator/prometheus
+  - job_name: market-customer-app
+    scrape_timeout: 60s
+    static_configs:
+      - targets: [ 'host.docker.internal:8085' ] # Убедитесь, что из контейнера VM этот хост доступен
+        labels:
+          application: market-admin-service
+    metrics_path: /actuator/prometheus
+  - job_name: feedback-service
+    scrape_timeout: 60s
+    static_configs:
+      - targets: [ 'host.docker.internal:8084' ] # Убедитесь, что из контейнера VM этот хост доступен
+        labels:
+          application: market-admin-service
+    metrics_path: /actuator/prometheus

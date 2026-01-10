@@ -1,0 +1,60 @@
+spring:
+  boot:
+    admin:
+      client:
+        enabled: false
+  application:
+    name: feedback-servise
+  data:
+    mongodb:
+      uri: mongodb://192.168.1.5:27017/feedback
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://192.168.1.5:8082/realms/market
+      client:
+        registration:
+          keycloak:
+            client-id: feedback-service-metrics-client
+            client-secret: DQybxb19r95zmYiCOZuE7SromGXB2SdX
+            authorization-grant-type: client_credentials
+            scope:
+              - metrics_server
+        provider:
+          keycloak:
+            issuer-uri: http://192.168.1.5:8082/realms/market
+
+server:
+  port: 8084
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: feedback-service-swagger-ui
+      use-pkce-with-authorization-code-grant: true
+
+keycloak:
+  uri: http://192.168.1.5:8082
+
+management:
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+          - health
+          - prometheus
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.5:8761/eureka/
+  instance:
+    prefer-ip-address: false  # Измените на false
+    hostname: 192.168.1.5
+    instance-id: ${spring.application.name}:${server.port}

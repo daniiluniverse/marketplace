@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: admin-server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://192.168.1.5:8082/realms/market
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://192.168.1.5:8082/realms/market
+        registration:
+          keycloak:
+            authorization-grant-type: client_credentials
+            scope:
+              - metrics
+            client-id: admin-service
+            client-secret: UXrv6KUtrlU1NHlQulJWqfjCLboSHRfO
+          login:
+            provider: keycloak
+            scope:
+              - metrics
+              - openid
+            client-id: admin-service
+            client-secret: UXrv6KUtrlU1NHlQulJWqfjCLboSHRfO
+
+server:
+  port: 8086
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://192.168.1.5:8761/eureka/
+    register-with-eureka: true
+

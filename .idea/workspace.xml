@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dcb35169-1a59-436d-bc26-fe7ce3b18cdb" name="Changes" comment="docker compose">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a9a8ef2d-5496-4b29-a0df-a9ad99320506.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a9a8ef2d-5496-4b29-a0df-a9ad99320506/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a9a8ef2d-5496-4b29-a0df-a9ad99320506/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a9a8ef2d-5496-4b29-a0df-a9ad99320506/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a9a8ef2d-5496-4b29-a0df-a9ad99320506/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-server/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-server/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-server/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-server/src/main/java/org/example/marketplace/adminserver/AdminServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-server/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/org/example/marketplace/apigateway/ApiGatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/test/java/org/example/marketplace/apigateway/ApiGatewayApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalogue-sevice/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalogue-sevice/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalogue-sevice/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalogue-sevice/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalogue-sevice/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalogue-sevice/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalogue-sevice/src/test/java/org/example/marketplace/cataloguesevice/CatalogueSeviceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/keycloak/import/keycloak.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/victoria-metrics/promscrape.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/src/main/java/org/example/marketplace/customerapp/CustomerAppApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-app/src/test/java/org/example/marketplace/customerapp/CustomerAppApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/grafana/alerting/1/__default__.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/grafana/grafana.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/java/org/example/marketplace/eurekaserver/EurekaServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/src/main/asciidoc/documentation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/src/main/asciidoc/documentation.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/src/main/java/org/example/marketplace/feedbackservise/FeedbackServiseApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback-servise/src/test/java/org/example/marketplace/feedbackservise/FeedbackServiseApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/infrastructure/keycloak.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/services/admin-server-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.devcontainer/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.devcontainer/devcontainer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.devcontainer/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.devcontainer/mssql/installSQLtools.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.devcontainer/mssql/postCreateCommand.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.devcontainer/mssql/setup.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/src/main/java/org/example/marketplace/managerapp/ManagerAppApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/src/test/java/org/example/marketplace/managerapp/ManagerAppApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/client/ProductRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/config/ProductClientBeans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/controller/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/CartData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/CartItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/CreateOrderRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/OrderItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/cart/AddToCartRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/cart/CartItemResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/cart/CartResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/dto/cart/CheckoutRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/entity/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/entity/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/entity/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/entity/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/entity/PaymentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/mapper/OrderItemMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/repository/CartRedisRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/repository/OrderItemsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/service/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/java/org/example/marketplace/orderservs/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-servs/src/main/resources/migration/V25_1_1__Basic_schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_admin.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/curr_hour_metric_ids" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/data.0.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/data.1.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/data.2.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/data.3.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/data.4.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/data.5.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/data.6.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/data.7.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_metricName/metadata.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/data.0.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/data.1.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/data.2.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/data.3.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/data.4.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/data.5.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/data.6.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/data.7.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricID_tsid/metadata.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/data.0.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/data.1.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/data.2.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/data.3.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/data.4.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/data.5.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/data.6.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/data.7.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metricName_tsid/metadata.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/metric_usage_tracker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/next_day_metric_ids_v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/prev_hour_metric_ids" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult.key.prefix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/data.0.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/data.1.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/data.2.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/data.3.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/data.4.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/data.5.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/data.6.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/data.7.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/cache/rollupResult/metadata.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA84F3/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA84F3/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA84F3/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA84F3/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA84F3/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA8593/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA8593/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA8593/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA8593/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186568C9C7BA8593/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1865D27AA166D7DD/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1865D27AA166D7DD/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1865D27AA166D7DD/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1865D27AA166D7DD/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1865D27AA166D7DD/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB70EB/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB70EB/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB70EB/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB70EB/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB70EB/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB739C/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB739C/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB739C/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB739C/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB739C/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB73E0/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB73E0/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB73E0/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB73E0/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18673FA841EB73E0/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BD2/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BD2/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BD2/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BD2/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BD2/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BE0/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BE0/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BE0/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BE0/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/186758C092755BE0/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18676455D6790633/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18676455D6790633/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18676455D6790633/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18676455D6790633/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18676455D6790633/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA616D1/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA616D1/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA616D1/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA616D1/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA616D1/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61726/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61726/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61726/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61726/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61726/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61787/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61787/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61787/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61787/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/1867AA082EA61787/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA82C/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA82C/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA82C/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA82C/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA82C/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA8DF/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA8DF/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA8DF/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA8DF/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA8DF/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA92C/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA92C/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA92C/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA92C/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA92C/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA93A/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA93A/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA93A/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA93A/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA93A/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA948/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA948/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA948/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA948/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA948/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA9A2/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA9A2/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA9A2/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA9A2/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DA9A2/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DAA0A/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DAA0A/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DAA0A/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DAA0A/timestamps.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/18680356A76DAA0A/values.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/data/small/2025_09/parts.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/flock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92A/parts.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18635C50279D31F5/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18635C50279D31F5/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18635C50279D31F5/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18635C50279D31F5/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18635C50279D31F5/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18640047A79B3499/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18640047A79B3499/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18640047A79B3499/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18640047A79B3499/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18640047A79B3499/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18644BA6187553E1/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18644BA6187553E1/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18644BA6187553E1/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18644BA6187553E1/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18644BA6187553E1/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18649A4122AB7C7E/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18649A4122AB7C7E/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18649A4122AB7C7E/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18649A4122AB7C7E/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18649A4122AB7C7E/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1864D43C335BB645/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1864D43C335BB645/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1864D43C335BB645/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1864D43C335BB645/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1864D43C335BB645/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18651CA88E11B3F6/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18651CA88E11B3F6/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18651CA88E11B3F6/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18651CA88E11B3F6/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18651CA88E11B3F6/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1865D27A4569D585/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1865D27A4569D585/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1865D27A4569D585/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1865D27A4569D585/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1865D27A4569D585/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18673FA740CBB71B/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18673FA740CBB71B/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18673FA740CBB71B/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18673FA740CBB71B/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/18673FA740CBB71B/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/186758C05ED528A7/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/186758C05ED528A7/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/186758C05ED528A7/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/186758C05ED528A7/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/186758C05ED528A7/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B2/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B2/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B2/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B2/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B2/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B3/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B3/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B3/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B3/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B3/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B5/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B5/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B5/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B5/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B5/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B6/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B6/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B6/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B6/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B6/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B8/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B8/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B8/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B8/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B8/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B9/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B9/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B9/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B9/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185B9/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BB/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BB/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BB/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BB/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BB/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BC/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BC/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BC/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BC/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BC/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BD/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BD/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BD/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BD/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185BD/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185C3/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185C3/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185C3/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185C3/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185C3/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185CB/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185CB/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185CB/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185CB/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1867AA07C8A185CB/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCE/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCE/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCE/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCE/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCE/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCF/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCF/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCF/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCF/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DCF/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD0/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD0/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD0/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD0/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD0/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD1/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD1/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD1/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD1/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD1/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD2/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD2/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD2/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD2/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD2/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD3/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD3/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD3/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD3/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD3/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD4/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD4/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD4/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD4/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD4/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD5/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD5/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD5/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD5/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD5/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD6/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD6/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD6/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD6/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD6/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD7/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD7/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD7/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD7/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD7/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD8/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD8/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD8/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD8/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD8/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD9/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD9/items.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD9/lens.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD9/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/1868035644614DD9/metaindex.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92B/parts.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/indexdb/18618A321E24E92C/parts.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/victoria-metrics-data/metadata/minTimestampForCompositeIndex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/команда контейнера" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-sevice/src/main/java/org/example/marketplace/cataloguesevice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-sevice/src/main/java/org/example/marketplace/cataloguesevice/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-sevice/src/main/java/org/example/marketplace/cataloguesevice/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-sevice/src/main/java/org/example/marketplace/cataloguesevice/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-sevice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-sevice/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-sevice/src/test/java/org/example/marketplace/cataloguesevice/controller/ProductControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-sevice/src/test/java/org/example/marketplace/cataloguesevice/controller/ProductControllerIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-sevice/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-sevice/src/test/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-app/src/main/resources/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/customer-app/src/main/resources/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/org/example/marketplace/managerapp/client/ProductRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/org/example/marketplace/managerapp/client/ProductRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/org/example/marketplace/managerapp/client/RestClientBeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/org/example/marketplace/managerapp/client/RestClientBeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/org/example/marketplace/managerapp/dto/RequestProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/org/example/marketplace/managerapp/dto/RequestProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/test/java/org/example/marketplace/managerapp/config/TestingBeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/java/org/example/marketplace/managerapp/config/TestingBeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/test/java/org/example/marketplace/managerapp/controller/ProductControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/java/org/example/marketplace/managerapp/controller/ProductControllerIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+        <option value="Kubernetes Deployment" />
+        <option value="Enum" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;daniiluniverse&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/daniiluniverse/marketplace.git&quot;,
+    &quot;accountId&quot;: &quot;7bb3deab-1fd2-45ca-b755-486e28ce60e0&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;configuredContexts&quot;: [
+    {
+      &quot;name&quot;: &quot;minikube&quot;,
+      &quot;kubeConfigUrl&quot;: &quot;file://C:/Users/Даниил/.kube/config&quot;,
+      &quot;originalNamespace&quot;: &quot;market&quot;
+    }
+  ],
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="KubernetesSettings">
+    <option name="contextConfigFilePath" value="file://$USER_HOME$/.kube/config" />
+    <option name="contextName" value="minikube" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="32eJ7nXJVAxVUSTt23kD3UcjtIE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.OrderServiceApplication.executor": "Run",
+    "Docker.Dockerfile build.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
+    "Docker.docker-compose.yml.admin-server: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.catalogue-service: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.customer-app: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.eureka-server: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.feedback-service: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.keycloak: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.manager-app: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.postgres: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "HTTP Request.CatalogueServiceApplication | #1.executor": "Run",
+    "HTTP Request.CatalogueServiceApplication | #2.executor": "Run",
+    "HTTP Request.CatalogueServiceApplication | #3.executor": "Run",
+    "HTTP Request.CatalogueServiceApplication | #4.executor": "Run",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #11.executor": "Run",
+    "HTTP Request.generated-requests | #12.executor": "Run",
+    "HTTP Request.generated-requests | #13.executor": "Run",
+    "HTTP Request.generated-requests | #14.executor": "Run",
+    "HTTP Request.generated-requests | #17.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
+    "HTTP Request.generated-requests | #8.executor": "Run",
+    "HTTP Request.generated-requests | #9.executor": "Run",
+    "JUnit.ProductControllerClientTest.executor": "Run",
+    "JUnit.ProductControllerIT (1).executor": "Run",
+    "JUnit.ProductControllerIT.createProduct_WithValidData_ShouldReturnCreated.executor": "Run",
+    "JUnit.ProductControllerIT.executor": "Run",
+    "JUnit.ProductControllerIT.getAllProducts_ReturnsProductList.executor": "Run",
+    "JUnit.ProductControllerIT.getProduct_ReturnsProduct.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AdminServerApplication.executor": "Run",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.CatalogueServiceApplication.executor": "Run",
+    "Spring Boot.CustomerAppApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.FeedbackServiseApplication.executor": "Run",
+    "Spring Boot.ManagerAppApplication.executor": "Run",
+    "Spring Boot.OrderServiceApplication (1).executor": "Run",
+    "Spring Boot.OrderServiceApplication.executor": "Run",
+    "Spring Boot.OrderServsApplication.executor": "Run",
+    "Spring Boot.SimpleApplication.executor": "Run",
+    "com.intellij.ide.FileNotInSourceRootChecker.no.check": "true",
+    "git-widget-placeholder": "main2",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "G:/makretplace/order-servs/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15917969",
+    "project.structure.side.proportion": "0.58488375",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\makretplace\order-servs\src\main\resources" />
+      <recent name="G:\makretplace\order-service\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <set>
+              <option value="ApiGatewayApplication" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.OrderServsApplication">
+    <configuration name="CatalogueServiceApplication | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/CatalogueServiceApplication.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="CatalogueServiceApplication | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/CatalogueServiceApplication.http" executionIdentifier="#4" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #11" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#11" index="11" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #12" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#12" index="12" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #13" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#13" index="13" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="AdminServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="admin-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.adminserver.AdminServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CatalogueServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="catalogue-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.cataloguesevice.CatalogueServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="customer-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.customerapp.CustomerAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FeedbackServiseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="feedback-servise" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.feedbackservise.FeedbackServiseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManagerAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="manager-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.managerapp.ManagerAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="order-servs" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.orderservs.OrderServsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="simple" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.marketplace.simple.SimpleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.CatalogueServiceApplication | #1" />
+      <item itemvalue="HTTP Request.CatalogueServiceApplication | #4" />
+      <item itemvalue="HTTP Request.generated-requests | #11" />
+      <item itemvalue="HTTP Request.generated-requests | #12" />
+      <item itemvalue="HTTP Request.generated-requests | #13" />
+      <item itemvalue="Spring Boot.OrderServsApplication" />
+      <item itemvalue="Spring Boot.SimpleApplication" />
+      <item itemvalue="Spring Boot.CatalogueServiceApplication" />
+      <item itemvalue="Spring Boot.FeedbackServiseApplication" />
+      <item itemvalue="Spring Boot.AdminServerApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.CustomerAppApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ManagerAppApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #13" />
+        <item itemvalue="HTTP Request.generated-requests | #12" />
+        <item itemvalue="HTTP Request.CatalogueServiceApplication | #4" />
+        <item itemvalue="HTTP Request.CatalogueServiceApplication | #1" />
+        <item itemvalue="HTTP Request.generated-requests | #11" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dcb35169-1a59-436d-bc26-fe7ce3b18cdb" name="Changes" comment="" />
+      <created>1757774939916</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757774939916</updated>
+      <workItem from="1757774941274" duration="1208000" />
+      <workItem from="1757776257312" duration="2328000" />
+      <workItem from="1757842697833" duration="6244000" />
+      <workItem from="1757849172152" duration="1710000" />
+      <workItem from="1757926350975" duration="10876000" />
+      <workItem from="1757955945819" duration="10876000" />
+      <workItem from="1757969113117" duration="3595000" />
+      <workItem from="1758042584464" duration="3476000" />
+      <workItem from="1758137380859" duration="1351000" />
+      <workItem from="1758139383676" duration="1071000" />
+      <workItem from="1758359764630" duration="456000" />
+      <workItem from="1758444113017" duration="8200000" />
+      <workItem from="1758471699522" duration="2137000" />
+      <workItem from="1758473865042" duration="2147000" />
+      <workItem from="1758476058165" duration="624000" />
+      <workItem from="1758476720073" duration="258000" />
+      <workItem from="1758477007619" duration="4277000" />
+      <workItem from="1758484401220" duration="5011000" />
+      <workItem from="1758561109627" duration="9538000" />
+      <workItem from="1758659221994" duration="7499000" />
+      <workItem from="1759240396464" duration="5917000" />
+      <workItem from="1759252712625" duration="9462000" />
+      <workItem from="1759266192549" duration="1213000" />
+      <workItem from="1759338763293" duration="7570000" />
+      <workItem from="1759429159121" duration="9379000" />
+      <workItem from="1759513165971" duration="1952000" />
+      <workItem from="1759571534270" duration="12016000" />
+      <workItem from="1759597422916" duration="7523000" />
+      <workItem from="1759682000070" duration="793000" />
+      <workItem from="1759688165047" duration="19000" />
+      <workItem from="1759688239379" duration="43000" />
+      <workItem from="1764878626054" duration="5000" />
+      <workItem from="1765314886136" duration="8000" />
+      <workItem from="1765821212757" duration="1388000" />
+      <workItem from="1765831410057" duration="1350000" />
+      <workItem from="1765908717509" duration="8277000" />
+      <workItem from="1765993694623" duration="2680000" />
+      <workItem from="1765996637130" duration="283000" />
+      <workItem from="1766002938500" duration="620000" />
+      <workItem from="1766332155304" duration="2413000" />
+      <workItem from="1766425838532" duration="8212000" />
+      <workItem from="1766511407809" duration="5163000" />
+      <workItem from="1766599167327" duration="234000" />
+      <workItem from="1766601668781" duration="2450000" />
+      <workItem from="1766686321917" duration="605000" />
+      <workItem from="1766689091885" duration="730000" />
+      <workItem from="1767027246637" duration="724000" />
+      <workItem from="1767081153784" duration="14850000" />
+      <workItem from="1767181215759" duration="128000" />
+      <workItem from="1767876486856" duration="11314000" />
+      <workItem from="1767950975972" duration="3822000" />
+      <workItem from="1767968547831" duration="3166000" />
+      <workItem from="1768042620411" duration="1879000" />
+      <workItem from="1768046842578" duration="1699000" />
+    </task>
+    <task id="LOCAL-00001" summary="eureka">
+      <option name="closed" value="true" />
+      <created>1757846517244</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1757846517244</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="eureka" />
+    <MESSAGE value="docker" />
+    <MESSAGE value="docker compose" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker compose" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/org/example/marketplace/orderservice/OrderServiceApplication.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

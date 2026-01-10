@@ -1,6 +1,7 @@
 package org.example.marketplace.cataloguesevice.controller;
 
 
+import de.codecentric.boot.admin.client.registration.RegistrationClient;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.RestDocumentationExtension;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -28,11 +32,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @AutoConfigureRestDocs
+@ActiveProfiles("test") // <- Добавьте эту аннотацию
 @ExtendWith(RestDocumentationExtension.class)
 public class ProductControllerIT {
 
     @Autowired
     MockMvc mockMvc;
+
+    @MockitoBean
+    private RegistrationClient registrationClient;
+
 
     @Test
     @Sql("/sql/products.sql")
@@ -148,7 +157,7 @@ public class ProductControllerIT {
     void getProduct_ReturnsProduct() throws Exception {
 
         var requestBuilders = MockMvcRequestBuilders.get("/app/products/1")
-                .with(jwt().jwt(builder -> builder.claim("scope", "edit_catalogue")));
+                .with(jwt().jwt(builder -> builder.claim("scope", "view_catalogue")));
 
         this.mockMvc.perform(requestBuilders)
                 .andDo(print())

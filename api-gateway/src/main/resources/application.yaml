@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: qpi-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: catalogue-service
+              uri: http://localhost:8081
+              predicates:
+                - Host=catalogue.api.market.127.0.0.1.nip.io:8087, localhost:8087
+          forwarded:
+            by:
+              enabled: false
+
+
+server:
+  port: 8087
+  forward-headers-strategy: framework
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 1
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 1
+    register-with-eureka: false

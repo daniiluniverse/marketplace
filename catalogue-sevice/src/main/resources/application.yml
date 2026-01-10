@@ -3,14 +3,25 @@ spring:
     admin:
       client:
         enabled: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    schemas: products
+    create-schemas: true
+    baseline-on-migrate: true
+    jpa:
+      hibernate:
+        ddl-auto: validate  # или none вместо update
+      defer-datasource-initialization: true
 
   application:
     name: catalogue-sevice
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/marketplace_db
+    url: jdbc:postgresql://localhost:5432/test_db
     username: postgres
     password: 1199
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,18 +30,18 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8082/realms/market
+          issuer-uri: http://192.168.1.5:8082/realms/market
       client:
         registration:
           keycloak:
             client-id: catalogue-service-metrics-client
-            client-secret: guMJRJPhtg8dfQyLJH2ACJ0Bsm34OiZO
+            client-secret: enjlURxtE37gXjHH7yx3tUZdqaEHRmP0
             authorization-grant-type: client_credentials
             scope:
               - metrics_server
         provider:
           keycloak:
-            issuer-uri: http://localhost:8082/realms/market
+            issuer-uri: http://192.168.1.5:8082/realms/market
 
 
 server:
@@ -43,7 +54,7 @@ springdoc:
       use-pkce-with-authorization-code-grant: true
 
 keycloak:
-  uri: http://localhost:8082
+  uri: http://192.168.1.5:8082
 
 management:
   health:
@@ -59,8 +70,8 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.1.5:8761/eureka/
   instance:
-    hostname: localhost  # или ваш корректный hostname
+    hostname: 192.168.1.5  # или ваш корректный hostname
     instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true
