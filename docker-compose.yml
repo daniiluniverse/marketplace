@@ -12,6 +12,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  postgres-orders:
+    image: postgres:16
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: orders_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
   feedback-db:
     image: mongo:7
     ports:
@@ -27,6 +38,29 @@ services:
     ports:
       - '8082:8080'
     command: start-dev --import-realm
+
+  kafka:
+    image: apache/kafka:latest
+    container_name: marketplace-kafka
+    ports:
+      - "9092:9092"
+      - "9093:9093"  # ← добавь для controller
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: controller,broker
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+
+      # ВАЖНО: 2 listener'а - для внешних и внутренних подключений
+      KAFKA_LISTENERS: PLAINTEXT_INTERNAL://:19092,PLAINTEXT_HOST://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT_INTERNAL://kafka:19092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT_INTERNAL
+
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
 
 
 
@@ -115,8 +149,23 @@ services:
     ports:
       - '8761:8761'
 
+  order-servs:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: order-servs/target/order-servs-1.0-SNAPSHOT-exec.jar
+    environment:
+      JAVA_OPTS: -Xmx512m -Xms256m
+    ports:
+      - '8088:8088'
+    depends_on:
+      - kafka
+
 
 
 volumes:
   postgres_data:
+  postgres_orders_data:
   satmag-keycloak-data:

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("{userId}/orders")
 @AllArgsConstructor
 public class OrderController {
 
@@ -28,27 +28,36 @@ public class OrderController {
 
 
 
-//    @PostMapping("/new/{productId}")
-//    public ResponseEntity<?> createOrder(@PathVariable Long userId, @RequestBody String address){
-//
-//        log.info("Creating order with product {}", productId);
-//
-//        try {
-//            Product product = productRestClient.findProduct(productId);
-//            if (product == null) {
-//                log.error("Product is null!");
-//                return ResponseEntity.notFound().build();
-//            }
-//
-//
-//            CreateOrderRequest createOrderRequest = new CreateOrderRequest(product.id(), product.name(), product.price());
-//            OrderDTO order = this.orderService.createOrder(createOrderRequest);
-//
-//            return ResponseEntity.created(URI.create("/orders/"+order.getId()))
-//                    .body(order);
-//        } catch (Exception e) {
-//            return ResponseEntity.notFound().build();
-//        }
-//
-//    }
+    @PostMapping("/new/{productId}")
+    public ResponseEntity<?> createOrder(@PathVariable Long userId, @PathVariable Long productId, @RequestBody String address){
+
+        log.info("Creating order with product {}", productId);
+
+        try {
+            Product product = productRestClient.findProduct(productId);
+            if (product == null) {
+                log.error("Product is null!");
+                return ResponseEntity.notFound().build();
+            }
+
+
+            CreateOrderRequest createOrderRequest = new CreateOrderRequest(product.id(), product.name(), product.price(), address);
+            OrderDTO order = this.orderService.createOrder(userId, createOrderRequest);
+
+            return ResponseEntity.created(URI.create("/orders/"+order.getId()))
+                    .body(order);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/orderId")
+
+    public ResponseEntity<?> cancelOrder(@PathVariable Long userId, @PathVariable Long orderId){
+        orderService.cancelOrder(userId, orderId);
+
+        return ResponseEntity.ok().body("Заказ отменен");
+    }
+
+
 }

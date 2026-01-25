@@ -1,0 +1,24 @@
+package org.example.marketplace.paymentservice.kafka;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class OrderCreatedEvent {
+
+
+    private String orderNumber;
+
+    private Long orderId;
+
+    private BigDecimal amount;
+
+
+}

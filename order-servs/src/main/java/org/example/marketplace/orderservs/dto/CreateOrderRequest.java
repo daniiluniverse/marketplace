@@ -5,7 +5,8 @@ import org.example.marketplace.orderservs.entity.OrderItem;
 public record CreateOrderRequest(
         long productId,
         String productName,
-        double price
+        double price,
+        String address
 ) {
 
 }

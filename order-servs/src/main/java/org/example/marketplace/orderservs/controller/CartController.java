@@ -19,20 +19,20 @@ import java.math.BigDecimal;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/carts")
+@RequestMapping("/{userId}/cart")
 @RequiredArgsConstructor
 @Slf4j
 public class CartController {
 
     private final CartService cartService;
 
-    @GetMapping("/{userId}")
+    @GetMapping
     public ResponseEntity<CartResponse> getCart(@PathVariable Long userId) {
         CartData cart = cartService.getCart(userId);
         return ResponseEntity.ok(toResponse(cart));
     }
 
-    @PostMapping("/{userId}/items")
+    @PostMapping("/items")
     public ResponseEntity<CartResponse> addToCart(
             @PathVariable Long userId,
             @RequestBody AddToCartRequest request) {
@@ -41,7 +41,7 @@ public class CartController {
         return ResponseEntity.ok(toResponse(cart));
     }
 
-    @PutMapping("/{userId}/items/{productId}")
+    @PutMapping("items/{productId}")
     public ResponseEntity<CartResponse> updateQuantity(
             @PathVariable Long userId,
             @PathVariable Long productId,
@@ -51,7 +51,7 @@ public class CartController {
         return ResponseEntity.ok(toResponse(cart));
     }
 
-    @DeleteMapping("/{userId}/items/{productId}")
+    @DeleteMapping("/items/{productId}")
     public ResponseEntity<Void> removeItem(
             @PathVariable Long userId,
             @PathVariable Long productId) {
@@ -60,13 +60,13 @@ public class CartController {
         return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping("/{userId}")
+    @DeleteMapping()
     public ResponseEntity<Void> clearCart(@PathVariable Long userId) {
         cartService.clearCart(userId);
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/{userId}/checkout")
+    @PostMapping("/checkout")
     public ResponseEntity<?> checkout(
             @PathVariable Long userId,
             @RequestBody CheckoutRequest request) {

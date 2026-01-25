@@ -30,7 +30,6 @@ public class CartRedisRepository {
         log.debug("Cart saved for user {}: {} items", userId, cart.getItems().size());
     }
 
-    // Получить корзину пользователя
 // Получить корзину пользователя (с защитой от null)
     public CartData getCart(Long userId) {
         String key = CART_PREFIX + userId;

@@ -48,7 +48,6 @@ public class ProductControllerIT {
         }
         """;
 
-        // Настройка мока для void-метода
         doNothing().when(this.productRestClient).newProduct(any());
 
         mockMvc.perform(post("/api/products")

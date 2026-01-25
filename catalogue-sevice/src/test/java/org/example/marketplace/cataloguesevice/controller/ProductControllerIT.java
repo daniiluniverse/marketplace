@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @AutoConfigureRestDocs
-@ActiveProfiles("test") // <- Добавьте эту аннотацию
+@ActiveProfiles("test")
 @ExtendWith(RestDocumentationExtension.class)
 public class ProductControllerIT {
 
@@ -56,7 +56,7 @@ public class ProductControllerIT {
                        status().isOk(),
                        content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON),
                        content().json("""
-                     
+
                      [
                        {id: 1, name: "Товар 1", details: "Описание товара 1", price: 1000},
                        {id: 3, name: "Товар 3", details: "Описание товара 3", price: 2000}
@@ -124,7 +124,7 @@ public class ProductControllerIT {
                 .andExpectAll(status().isForbidden()
 
                         );
-        
+
     }
 
 

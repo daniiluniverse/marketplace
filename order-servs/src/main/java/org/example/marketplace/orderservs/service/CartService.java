@@ -11,6 +11,7 @@ import org.example.marketplace.orderservs.entity.CartItem;
 import org.example.marketplace.orderservs.entity.Order;
 import org.example.marketplace.orderservs.entity.Product;
 import org.example.marketplace.orderservs.repository.CartRedisRepository;
+import org.reactivestreams.Publisher;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -72,12 +73,13 @@ public class CartService {
         }
 
         // Создать заказ
-        OrderDTO order = orderService.createOrder(userId, address);
+        OrderDTO order = orderService.createOrderFromCart(userId, address);
 
         // Очистить корзинуw
         cartRepository.deleteCart(userId);
 
         return order;
     }
+
 
 }
